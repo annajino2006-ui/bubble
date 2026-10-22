@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pop as many colorful bubbles as you can before the 30-second timer runs out."
+    />
+    <title>Bubble Pop!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <a class="brand" href="#" aria-label="Bubble Pop home">
+          <span class="brand-icon" aria-hidden="true">●</span>
+          <span>Bubble Pop!</span>
+        </a>
+        <button
+          class="sound-toggle"
+          id="sound-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Mute sound"
+        >
+          <span id="sound-icon" aria-hidden="true">🔊</span>
+          <span id="sound-label">Sound on</span>
+        </button>
+      </header>
+
+      <section class="game-card" aria-label="Bubble Pop game">
+        <div class="scoreboard">
+          <div class="stat">
+            <span class="stat-label">Score</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat timer-stat">
+            <span class="stat-label">Time</span>
+            <span class="stat-value" id="timer" aria-label="30 seconds">30</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Best</span>
+            <span class="stat-value" id="best-score">0</span>
+          </div>
+        </div>
+
+        <div
+          class="play-area"
+          id="play-area"
+          aria-label="Play area. Pop the bubbles to score points."
+        >
+          <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+
+          <section class="game-screen welcome-screen" id="welcome-screen">
+            <div class="screen-content">
+              <span class="welcome-art" aria-hidden="true">🫧</span>
+              <p class="eyebrow">Ready, set, pop!</p>
+              <h1>Bubble Pop</h1>
+              <p class="screen-description">
+                Pop as many bubbles as you can before time runs out.
+                <strong>Each bubble is worth 10 points!</strong>
+              </p>
+              <button class="primary-button" id="start-button" type="button">
+                Start Game <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </section>
+
+          <section
+            class="game-screen game-over-screen"
+            id="game-over-screen"
+            hidden
+          >
+            <div class="screen-content">
+              <span class="welcome-art" aria-hidden="true">🎉</span>
+              <p class="eyebrow">Time's up!</p>
+              <h2>Great popping!</h2>
+              <p class="screen-description">
+                You scored <strong id="final-score">0</strong> points.
+              </p>
+              <button class="primary-button" id="play-again-button" type="button">
+                Play Again <span aria-hidden="true">↻</span>
+              </button>
+            </div>
+          </section>
+        </div>
+        <p class="game-hint">Tap or click a bubble to pop it!</p>
+      </section>
+
+      <footer class="game-footer">
+        <span>Quick fingers, happy bubbles.</span>
+        <span aria-hidden="true">✦</span>
+      </footer>
+    </main>
+  </body>
+</html>
